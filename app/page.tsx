@@ -6,6 +6,8 @@ import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { ArrowRightIcon, Check, AlertCircle } from "lucide-react";
 
+import { DotPattern } from "@/components/magicui/dot-pattern";
+
 const Page = () => {
   return (
     <div className="relative z-10">
@@ -64,9 +66,7 @@ const Page = () => {
                         </span>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg">
-                          {item.title}
-                        </h3>
+                        <h3 className="font-semibold text-lg">{item.title}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </div>
                     </div>
@@ -109,13 +109,20 @@ const Page = () => {
                   "Track your vocal wellness with detailed reports and analytics.",
               },
             ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-transparent p-8 rounded-xl border hover:shadow-xl transition-shadow"
-              >
-                <Check className="text-pink-500 mb-4" size={24} />
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+              <div key={index} className="relative border border-red-500 p-6">
+                <DotPattern width={5} height={5} />
+                <div className="absolute -left-1.5 -top-1.5 h-3 w-3 bg-red-500 text-white" />
+                <div className="absolute -bottom-1.5 -left-1.5 h-3 w-3 bg-red-500 text-white" />
+                <div className="absolute -right-1.5 -top-1.5 h-3 w-3 bg-red-500 text-white" />
+                <div className="absolute -bottom-1.5 -right-1.5 h-3 w-3 bg-red-500 text-white" />
+
+                <div className="relative z-10 bg-white dark:bg-transparent p-6 rounded-[30px] h-full">
+                  <Check className="text-pink-500 mb-4" size={24} />
+                  <h3 className="text-xl font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
               </div>
             ))}
           </section>
