@@ -5,7 +5,6 @@ import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { ArrowRightIcon, Check, AlertCircle } from "lucide-react";
-
 import { DotPattern } from "@/components/magicui/dot-pattern";
 
 const Page = () => {
@@ -29,11 +28,13 @@ const Page = () => {
               Design and manage your entire schema with drag-and-drop ease and
               live SQL generation — all in one place.
             </p>
-            <RainbowButton>Explore it now</RainbowButton>
+            <RainbowButton onClick={() => window.location.href = "/Editor"}>
+              Explore it now
+            </RainbowButton>
           </div>
 
           {/* New Laptop Mockup Section */}
-          <div className="mt-24 bg-card rounded-2xl shadow-xl p-8 relative overflow-hidden">
+          <div className="mt-24 bg-transparent border rounded-2xl shadow-xl p-8 relative overflow-hidden">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-2">
