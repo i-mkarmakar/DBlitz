@@ -7,17 +7,15 @@ import {
     useStoreApi,
 } from '@xyflow/react';
 import { Button } from '@/components/ui/button';
-import { Lock, PlusIcon, Unlock, ZoomIn, ZoomOut } from 'lucide-react';
+import { Lock, Unlock, PlusIcon, ZoomIn, ZoomOut, Ratio } from 'lucide-react';
 import { EntityNodeProps } from './entity-node';
 import { shallow } from 'zustand/shallow';
-import { AspectRatioIcon } from '@radix-ui/react-icons';
 
 const selector = (s: ReactFlowState) => ({
     isInteractive: s.nodesDraggable || s.nodesConnectable || s.elementsSelectable,
     minZoomReached: s.transform[2] <= s.minZoom,
     maxZoomReached: s.transform[2] >= s.maxZoom,
 });
-
 
 function Toolbar() {
     const { setNodes, zoomIn, zoomOut, fitView, getNodes } = useReactFlow();
@@ -63,21 +61,21 @@ function Toolbar() {
 
     return (
         <Panel position="bottom-center">
-            <div className='flex flex-col md:flex-row gap-0.5'>
+            <div className='flex flex-col md:flex-row gap-2'>
                 <Button title={isInteractive ? "lock" : "unlock"} onClick={onToggleInteractivity}>
                     {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
                 </Button>
                 <Button title='zoom-in' onClick={onZoomInHandler} disabled={maxZoomReached}>
                     <ZoomIn size={20} />
                 </Button>
-                <Button title='add-entity' onClick={createNode}>
+                <Button title='add-entity' onClick={createNode} className="bg-[#ff5941] text-white">
                     <PlusIcon size={20} />
                 </Button>
                 <Button title='zoom-out' onClick={onZoomOutHandler} disabled={minZoomReached}>
                     <ZoomOut size={20} />
                 </Button>
                 <Button title='fit-view' onClick={onFitViewHandler}>
-                    <AspectRatioIcon width={20} height={20} />
+                    <Ratio size={20} />
                 </Button>
             </div>
         </Panel>

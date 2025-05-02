@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
 import { relationTypes } from '@/lib/constants';
 import { BaseEdge, Edge, EdgeLabelRenderer, EdgeProps, getBezierPath, useReactFlow } from '@xyflow/react';
-import { Trash } from 'lucide-react';
+import { Trash2Icon } from 'lucide-react';
 import React from 'react';
 
 export type RelationEdgeProps = Edge<{
@@ -61,7 +61,7 @@ export default function RelationEdge({
                         </SelectContent>
                     </Select>
                     <Button variant="destructive" className='aspect-square' onClick={deleteEdge}>
-                        <Trash />
+                        <Trash2Icon />
                     </Button>
                 </div>
             </EdgeLabelRenderer>

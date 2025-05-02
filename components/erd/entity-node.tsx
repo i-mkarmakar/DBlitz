@@ -18,7 +18,6 @@ export type EntityNodeProps = Node<{
 export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
     const { setNodes, setEdges } = useReactFlow();
     const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
-        // setData({ ...data, name: evt.target.value });
         setNodes((nodes) => {
             const nodeIndex = nodes.findIndex((node) => node.id === id);
             if (nodeIndex === -1) return nodes;

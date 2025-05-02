@@ -8,7 +8,7 @@ import {
   useEdgesState,
   useNodesState,
 } from "@xyflow/react";
-
+import { ArrowLeft } from 'lucide-react';
 import "@xyflow/react/dist/style.css";
 import { useCallback } from "react";
 import EntityNode, { EntityNodeProps } from "@/components/erd/entity-node";
@@ -18,11 +18,8 @@ import RelationEdge, {
 import DownloadButton from "@/components/erd/download-button";
 import Toolbar from "@/components/erd/toolbar";
 
-
 import React from "react";
-import  Dock  from "@/components/erd/dock";
-
-
+import { Button } from "@/components/ui/button";
 
 const initialNodes: EntityNodeProps[] = [
   {
@@ -70,7 +67,15 @@ export default function ErdBoard() {
   );
 
   return (
-    <div className="relative w-full flex-grow h-[calc(100vh-56px)] rounded">
+    <div className="relative w-full flex-grow h-[calc(100vh)] rounded">
+      <Button
+        onClick={() => window.history.back()} variant="ghost"
+        className="absolute top-4 left-4 z-50 font-medium py-1 px-3 rounded flex items-center gap-2 cursor-pointer"
+      >
+        <ArrowLeft />
+        Back
+      </Button>
+  
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -83,9 +88,8 @@ export default function ErdBoard() {
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
         <DownloadButton />
         <Toolbar />
-        <Dock />
       </ReactFlow>
-
-      </div>
+    </div>
   );
+  
 }
