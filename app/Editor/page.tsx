@@ -1,21 +1,91 @@
-import React from 'react'
+"use client";
 
-import { SqlPreview } from '@/components/SqlPreview';
-import { SchemaEditor } from '@/components/SchemaEditor';
+import {
+  addEdge,
+  Background,
+  BackgroundVariant,
+  ReactFlow,
+  useEdgesState,
+  useNodesState,
+} from "@xyflow/react";
 
-const page = () => {
+import "@xyflow/react/dist/style.css";
+import { useCallback } from "react";
+import EntityNode, { EntityNodeProps } from "@/components/erd/entity-node";
+import RelationEdge, {
+  RelationEdgeProps,
+} from "@/components/erd/relation-edge";
+import DownloadButton from "@/components/erd/download-button";
+import Toolbar from "@/components/erd/toolbar";
+
+
+import React from "react";
+import  Dock  from "@/components/erd/dock";
+
+
+
+const initialNodes: EntityNodeProps[] = [
+  {
+    id: "1",
+    position: { x: 10, y: 10 },
+    data: { name: "", attributes: [{ name: "", type: "string" }], open: true },
+    type: "entity",
+  },
+  {
+    id: "2",
+    position: { x: 400, y: 400 },
+    data: { name: "", attributes: [{ name: "", type: "string" }], open: false },
+    type: "entity",
+  },
+];
+
+const initialEdges: RelationEdgeProps[] = [
+  {
+    id: "e1-2",
+    source: "1",
+    target: "2",
+    type: "relation",
+    data: { type: "1-m" },
+  },
+];
+
+const edgeTypes = {
+  relation: RelationEdge,
+};
+
+const nodeTypes = {
+  entity: EntityNode,
+};
+
+export default function ErdBoard() {
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  const onConnect = useCallback(
+    (params: any) =>
+      setEdges((eds) =>
+        addEdge({ ...params, type: "relation", data: { type: "1-m" } }, eds)
+      ),
+    [setEdges]
+  );
+
   return (
-    <div className="flex flex-1 overflow-hidden">
-    <div className="h-full flex-1">
-      <SchemaEditor />
-    </div>
+    <div className="relative w-full flex-grow h-[calc(100vh-56px)] rounded">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+      >
+        <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
+        <DownloadButton />
+        <Toolbar />
+        <Dock />
+      </ReactFlow>
 
-    <div className="w-84 h-full overflow-auto border-l bg-white shadow-md dark:bg-zinc-800">
-      <SqlPreview />
-    </div>
-  </div>
-
-  )
+      </div>
+  );
 }
-
-export default page
