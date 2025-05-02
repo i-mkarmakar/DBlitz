@@ -4,10 +4,13 @@ import React from "react";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
-import { ArrowRightIcon, Check, AlertCircle } from "lucide-react";
+import { ArrowRightIcon, Check, } from "lucide-react";
+import { MagicCard } from "@/components/magicui/magic-card";
 import { DotPattern } from "@/components/magicui/dot-pattern";
+import { useTheme } from "next-themes";
 
 const Page = () => {
+  const { theme } = useTheme();
   return (
     <div className="relative z-10">
       <main className="pt-24 pb-16">
@@ -34,12 +37,15 @@ const Page = () => {
           </div>
 
           {/* New Laptop Mockup Section */}
+          <MagicCard
+        gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+        className="p-0"
+      >
           <div className="mt-24 bg-transparent border rounded-2xl shadow-xl p-8 relative overflow-hidden">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-2">
-                  <h2 className="text-3xl font-bold">Why Design Visually</h2>
-                  <AlertCircle className="text-orange-500 w-5 h-5" />
+                  <h2 className="text-3xl font-bold">Think Visually, Design Smarter</h2>
                 </div>
                 <div className="space-y-4">
                   {[
@@ -47,22 +53,22 @@ const Page = () => {
                       number: "1",
                       title: "Visual Creation",
                       description:
-                        "Drag tables, set columns, link relationships.",
+                        "Start by dragging tables, setting columns, and linking relationships to build your database schema.",
                     },
                     {
                       number: "2",
                       title: "Instant SQL Output",
-                      description: "Live SQL preview, copy or download.",
+                      description: "Instantly preview the SQL statements generated based on your design. You can copy or download them.",
                     },
                     {
                       number: "3",
                       title: "Smart Productivity",
-                      description: "Toggle theme, follow best practices.",
+                      description: " Toggle themes and follow best practices for a more efficient and streamlined design process.",
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center mt-1">
-                        <span className="text-orange-500 font-semibold">
+                      <div className="w-6 h-6 rounded-full bg-[#ff5941] flex items-center justify-center mt-1">
+                        <span className="font-semibold">
                           {item.number}
                         </span>
                       </div>
@@ -90,6 +96,7 @@ const Page = () => {
               </div>
             </div>
           </div>
+          </MagicCard>
 
           {/* Features Section */}
           <section className="mt-24 grid md:grid-cols-3 gap-8 animate-fadeInUp">
