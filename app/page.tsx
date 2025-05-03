@@ -61,7 +61,7 @@ const Page = () => {
                           number: "2",
                           title: "Instant SQL Output",
                           description:
-                            "Preview the SQL statements based on your design. You can copy or download them.",
+                            "Preview the SQL statements based on design, copy or download them.",
                         },
                         {
                           number: "3",

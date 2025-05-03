@@ -1,4 +1,5 @@
-import { Attribute, Relation, GenerateFormData } from "./types";
+import { Attribute, Relation } from "./types";
+import { GenerateFormData } from "./types";
 
 export const placeholderData: GenerateFormData = 
 {
