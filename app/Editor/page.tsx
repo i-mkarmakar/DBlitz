@@ -222,13 +222,13 @@ function ErdBoardInner() {
 
         <Panel position="top-right">
           <div className="absolute right-4 flex flex-row gap-2">
-            <Button variant="ghost" onClick={onUseExample}>
+            <Button variant="ghost" onClick={onUseExample} className="cursor-pointer">
               Use Example
             </Button>
             <Button
               variant="ghost"
               onClick={onDownloadClick}
-              title="Download Image"
+              title="Download Image" className="cursor-pointer"
             >
               <Download size={20} />
             </Button>

@@ -98,7 +98,7 @@ export function MagicCard({
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)
-          `, // The hover effect with the color #ff5941
+          `,
           opacity: gradientOpacity,
         }}
       />
