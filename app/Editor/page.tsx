@@ -222,13 +222,18 @@ function ErdBoardInner() {
 
         <Panel position="top-right">
           <div className="absolute right-4 flex flex-row gap-2">
-            <Button variant="ghost" onClick={onUseExample} className="cursor-pointer">
+            <Button
+              variant="ghost"
+              onClick={onUseExample}
+              className="cursor-pointer"
+            >
               Use Example
             </Button>
             <Button
               variant="ghost"
               onClick={onDownloadClick}
-              title="Download Image" className="cursor-pointer"
+              title="Download Image"
+              className="cursor-pointer"
             >
               <Download size={20} />
             </Button>
@@ -242,6 +247,7 @@ function ErdBoardInner() {
                 isInteractive ? "Lock Interactions" : "Unlock Interactions"
               }
               onClick={onToggleInteractivity}
+              className="cursor-pointer"
             >
               {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
             </Button>
@@ -249,13 +255,14 @@ function ErdBoardInner() {
               title="Zoom In"
               onClick={onZoomInHandler}
               disabled={maxZoomReached}
+              className="cursor-pointer"
             >
               <ZoomIn size={20} />
             </Button>
             <Button
               title="Add Entity"
               onClick={createNode}
-              className="bg-[#ff5941] text-white"
+              className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer"
             >
               <PlusIcon size={20} />
             </Button>
@@ -263,10 +270,15 @@ function ErdBoardInner() {
               title="Zoom Out"
               onClick={onZoomOutHandler}
               disabled={minZoomReached}
+              className="cursor-pointer"
             >
               <ZoomOut size={20} />
             </Button>
-            <Button title="Fit View" onClick={onFitViewHandler}>
+            <Button
+              title="Fit View"
+              onClick={onFitViewHandler}
+              className="cursor-pointer"
+            >
               <Ratio size={20} />
             </Button>
           </div>
