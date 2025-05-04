@@ -122,7 +122,7 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
                     {data.attributes.map((attr, index) => (
                         <div key={index} className='grid grid-cols-[2fr_1fr_0.25fr] gap-2'>
                             <Input name="name" placeholder='Attribute Name' value={attr.name} onChange={(e) => onAttributeChange(index, e.target.name, e.target.value)} />
-                            <Select value={String(attr.type)} defaultValue={attributeTypes[0]} onValueChange={(v) => onAttributeChange(index, 'type', v)}  >
+                            <Select value={String(attr.type)} defaultValue={attributeTypes[0]} onValueChange={(v) => onAttributeChange(index, 'type', v)} >
                                 <SelectTrigger>
                                     {attr.type}
                                 </SelectTrigger>
@@ -130,20 +130,20 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
                                     {attributeTypes.map((attrType, idx) => (<SelectItem key={`attribute-type-select-${idx}`} value={String(attrType)}>{String(attrType)}</SelectItem>))}
                                 </SelectContent>
                             </Select>
-                            <Button variant="destructive" onClick={() => onRemoveAttribute(index)}>
+                            <Button variant="destructive" onClick={() => onRemoveAttribute(index)} className='cursor-pointer'>
                                 <Trash2Icon size={20} />
                             </Button>
                         </div>
                     ))}
-                    <Button onClick={onAddAttribute} className='w-full col-span-2 mt-2'><PlusIcon size={20} /></Button>
+                    <Button onClick={onAddAttribute} className='w-full col-span-2 mt-2 cursor-pointer text-white bg-[#ff5941]'><PlusIcon size={20} /></Button>
                 </div>
                 }
                 <div className='flex gap-2 mt-2 flex-col'>
 
-                    <Button onClick={onOpenChange} className='w-full mt-2'>
+                    <Button onClick={onOpenChange} className='w-full mt-2 cursor-pointer'>
                         {data.open ? <ShrinkIcon size={20} /> : <ExpandIcon size={20} />}
                     </Button>
-                    <Button variant="destructive" onClick={deleteNode} className='w-full mt-2'>
+                    <Button variant="destructive" onClick={deleteNode} className='w-full mt-2 cursor-pointer'>
                         <Trash2Icon />
                     </Button>
                 </div>

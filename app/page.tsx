@@ -134,9 +134,7 @@ const Page = () => {
           </MagicCard>
         </section>
       </main>
-      <div className="text-white py-6 mt-12">
-        <div className="max-w-7xl mx-auto text-center">
-        </div>
+      <div className="py-6 mt-8">
       </div>
     </div>
   );
