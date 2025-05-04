@@ -138,7 +138,7 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
                     <Button onClick={onAddAttribute} className='w-full col-span-2 mt-2'><PlusIcon size={20} /></Button>
                 </div>
                 }
-                <div className='flex gap-2 mt-2'>
+                <div className='flex gap-2 mt-2 flex-col'>
 
                     <Button onClick={onOpenChange} className='w-full mt-2'>
                         {data.open ? <ShrinkIcon size={20} /> : <ExpandIcon size={20} />}
