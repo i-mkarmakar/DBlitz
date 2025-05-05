@@ -23,6 +23,7 @@ export type EntityNodeProps = Node<
 
 export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
   const { setNodes, setEdges } = useReactFlow();
+  
   const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setNodes((nodes) => {
       const nodeIndex = nodes.findIndex((node) => node.id === id);
@@ -134,7 +135,7 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
   return (
     <>
       <Handle type="target" position={Position.Top} />
-      <div className="border border-foreground rounded p-1 bg-background">
+      <div className="border border-foreground rounded p-2 bg-background">
         <Input
           value={data.name}
           placeholder="Entity Name"
@@ -161,7 +162,11 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
                   defaultValue={attributeTypes[0]}
                   onValueChange={(v) => onAttributeChange(index, "type", v)}
                 >
-                  <SelectTrigger>{attr.type}</SelectTrigger>
+                  <SelectTrigger className="w-full">
+                    <div className="w-full">
+                      {attr.type}
+                    </div>
+                  </SelectTrigger>
                   <SelectContent>
                     {attributeTypes.map((attrType, idx) => (
                       <SelectItem
