@@ -31,8 +31,8 @@ import {
   Ratio,
 } from "lucide-react";
 import "@xyflow/react/dist/style.css";
-import EntityNode from "@/components/erd/entity-node";
-import RelationEdge from "@/components/erd/relation-edge";
+import EntityNode from "@/components/entity-node";
+import RelationEdge from "@/components/relation-edge";
 import { Button } from "@/components/ui/button";
 import { toPng } from "html-to-image";
 import { placeholderData } from "@/lib/constants";
