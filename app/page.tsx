@@ -86,7 +86,10 @@ const Page = () => {
               Design and manage your entire schema with drag-and-drop ease and
               live SQL generation — all in one place.
             </p>
-            <RainbowButton onClick={() => (window.location.href = "/Editor")} className="mt-6">
+            <RainbowButton
+              onClick={() => (window.location.href = "/Editor")}
+              className="mt-6"
+            >
               Explore it now
             </RainbowButton>
           </div>
@@ -94,39 +97,57 @@ const Page = () => {
             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             className="p-0"
           >
-            <div className="mt-24 bg-transparent border rounded-2xl shadow-xl p-8 relative overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="mt-24 mb-12 bg-transparent border rounded-2xl shadow-xl p-8 relative overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <div className="inline-flex items-center space-x-2">
-                    <h2 className="text-3xl font-bold">
+                    <h2 className="text-2xl sm:text-3xl font-bold">
                       Think Visually, Design Smarter
                     </h2>
                   </div>
                   <div className="space-y-4">
-                    {[{ number: "1", title: "Visual Creation", description: "Start by dragging tables, setting columns, and linking relationships." }, { number: "2", title: "Instant SQL Output", description: "Preview the SQL statements based on design, copy or download them." }, { number: "3", title: "Smart Productivity", description: "Toggle themes and follow best practices for efficient design." }]
-                      .map((item, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <div className="w-6 h-6 rounded-full bg-[#ff5941] flex items-center justify-center mt-1">
-                            <span className="font-semibold">{item.number}</span>
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-lg">
-                              {item.title}
-                            </h3>
-                            <p className="text-gray-600">{item.description}</p>
-                          </div>
+                    {[
+                      {
+                        number: "1",
+                        title: "Visual Creation",
+                        description:
+                          "Start by dragging tables, setting columns, and linking relationships.",
+                      },
+                      {
+                        number: "2",
+                        title: "Instant SQL Output",
+                        description:
+                          "Preview the SQL statements based on design, copy or download them.",
+                      },
+                      {
+                        number: "3",
+                        title: "Smart Productivity",
+                        description:
+                          "Toggle themes and follow best practices for efficient design.",
+                      },
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="min-w-5 min-h-5 sm:min-w-6 sm:min-h-6 rounded-full bg-[#ff5941] flex items-center justify-center mt-1 text-white text-[9px] sm:text-[10px]">
+                          <span className="font-semibold">{item.number}</span>
                         </div>
-                      ))}
+                        <div>
+                          <h3 className="font-semibold text-base sm:text-lg">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm sm:text-base">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <div className="relative">
-                  <div className="relative mx-auto max-w-[600px]">
-                    <div className="relative">
-                      <div className="bg-gray-800 rounded-t-xl p-2 aspect-[16/10]">
-                        <div className="bg-white rounded-lg h-full p-4 overflow-hidden"></div>
-                      </div>
-                      <div className="bg-gray-800 h-4 rounded-b-lg transform perspective-1000 rotateX-12"></div>
+                <div className="relative mt-8 md:mt-0">
+                  <div className="mx-auto w-full max-w-[500px] sm:max-w-[600px] px-2">
+                    <div className="bg-gray-800 rounded-t-xl p-2 aspect-[16/10]">
+                      <div className="bg-white rounded-lg h-full p-4 overflow-hidden"></div>
                     </div>
+                    <div className="bg-gray-800 h-4 rounded-b-lg transform perspective-1000 rotate-x-12"></div>
                   </div>
                 </div>
               </div>
@@ -134,8 +155,6 @@ const Page = () => {
           </MagicCard>
         </section>
       </main>
-      <div className="py-6 mt-8">
-      </div>
     </div>
   );
 };
