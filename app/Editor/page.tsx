@@ -241,7 +241,7 @@ function ErdBoardInner() {
         </Panel>
 
         <Panel position="bottom-center">
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 md:gap-4">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
             <Button
               title={
                 isInteractive ? "Lock Interactions" : "Unlock Interactions"
