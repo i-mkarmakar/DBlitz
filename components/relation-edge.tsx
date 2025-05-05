@@ -49,7 +49,7 @@ export default function RelationEdge({
                     style={{
                         transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
                     }}
-                    className="nodrag nopan absolute pointer-events-auto flex border-foreground border bg-background rounded p-1 gap-1"
+                    className="nodrag nopan absolute pointer-events-auto flex border-foreground border bg-background rounded p-2 gap-2"
                 >
                     <Select value={String(data?.type)} defaultValue={relationTypes[0]} onValueChange={onValueChange}  >
                         <SelectTrigger>
