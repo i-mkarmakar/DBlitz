@@ -5,6 +5,7 @@ import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { ArrowRightIcon } from "lucide-react";
+import Image from 'next/image'
 import { MagicCard } from "@/components/magicui/magic-card";
 import { useTheme } from "next-themes";
 
@@ -145,7 +146,15 @@ const Page = () => {
                 <div className="relative mt-8 md:mt-0">
                   <div className="mx-auto w-full max-w-[500px] sm:max-w-[600px] px-2">
                     <div className="bg-gray-800 rounded-t-xl p-2 aspect-[16/10]">
-                      <div className="bg-white rounded-lg h-full p-4 overflow-hidden"></div>
+                        <div className="bg-white rounded-lg h-full overflow-hidden">
+                        <Image
+                          src="/editor.png"
+                          alt="Editor Preview"
+                          className="w-full h-full rounded"
+                          width={500}
+                          height={300}
+                        />
+                        </div>
                     </div>
                     <div className="bg-gray-800 h-4 rounded-b-lg transform perspective-1000 rotate-x-12"></div>
                   </div>
