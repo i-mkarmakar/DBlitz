@@ -135,7 +135,7 @@ export default function EntityNode({ data, id }: NodeProps<EntityNodeProps>) {
                             </Button>
                         </div>
                     ))}
-                    <Button onClick={onAddAttribute} className='w-full col-span-2 mt-2 cursor-pointer text-white bg-[#ff5941]'><PlusIcon size={20} /></Button>
+                    <Button onClick={onAddAttribute} className='w-full col-span-2 mt-2 cursor-pointer text-white bg-[#ff5941] hover:bg-[#ff5941]/90'><PlusIcon size={20} /></Button>
                 </div>
                 }
                 <div className='flex gap-2 mt-2 flex-col'>
