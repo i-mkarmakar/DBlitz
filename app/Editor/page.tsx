@@ -241,7 +241,7 @@ function ErdBoardInner() {
         </Panel>
 
         <Panel position="bottom-center">
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col gap-2 md:flex-row">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col gap-2 md:flex-row gap-x-4">
             <Button
               title={
                 isInteractive ? "Lock Interactions" : "Unlock Interactions"
@@ -262,9 +262,9 @@ function ErdBoardInner() {
             <Button
               title="Add Entity"
               onClick={createNode}
-              className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer"
+              className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer p-4 transform scale-125"
             >
-              <PlusIcon size={20} />
+              <PlusIcon size={30} />
             </Button>
             <Button
               title="Zoom Out"
