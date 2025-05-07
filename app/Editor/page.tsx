@@ -228,7 +228,7 @@ function ErdBoardInner() {
             </Button>
           </div>
         </Panel>
-
+        </ReactFlow>
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
           <Button
             title={isInteractive ? "Lock Interactions" : "Unlock Interactions"}
@@ -268,7 +268,6 @@ function ErdBoardInner() {
             <Ratio size={20} />
           </Button>
         </div>
-      </ReactFlow>
     </div>
   );
 }
