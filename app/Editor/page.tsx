@@ -229,7 +229,7 @@ function ErdBoardInner() {
           </div>
         </Panel>
         </ReactFlow>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-4">
           <Button
             title={isInteractive ? "Lock Interactions" : "Unlock Interactions"}
             onClick={onToggleInteractivity}
