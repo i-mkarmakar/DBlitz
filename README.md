@@ -7,8 +7,8 @@
 ---
 
 <div align="center">
-<img src="public/DBlitz - 1.png" alt="DBlitz Screenshot" />
-<img src="public/DBlitz - 2.png" alt="DBlitz Screenshot" />
+<img src="public/dblitz - 1.png" alt="DBlitz Screenshot" />
+<img src="public/dblitz - 2.png" alt="DBlitz Screenshot" />
 </div>
 
 ---
