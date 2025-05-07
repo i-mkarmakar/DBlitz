@@ -152,9 +152,9 @@ function ErdBoardInner() {
       width: imageWidth,
       height: imageHeight,
       style: {
-        width: `${imageWidth}px`,
-        height: `${imageHeight}px`,
-        transform: `translate(${viewport.x}px, ${viewport.y}px) scale(${viewport.zoom})`,
+        width: ${imageWidth}px,
+        height: ${imageHeight}px,
+        transform: translate(${viewport.x}px, ${viewport.y}px) scale(${viewport.zoom}),
       },
     }).then(downloadImage);
   };
@@ -169,7 +169,7 @@ function ErdBoardInner() {
   const onUseExample = () => {
     const exampleNodes: Node[] = placeholderData.entities.map(
       (entity, index) => ({
-        id: `n-${index}`,
+        id: n-${index},
         position: { x: 50 + index * 250, y: 50 + index * 100 },
         data: { name: entity.name, attributes: entity.attributes, open: true },
         type: "entity",
@@ -184,7 +184,7 @@ function ErdBoardInner() {
         const to = exampleNodes.find((node) => node.data.name === relation.to);
         if (!from || !to) return null;
         return {
-          id: `e-${index}`,
+          id: e-${index},
           source: from.id,
           target: to.id,
           type: "relation",
@@ -291,5 +291,5 @@ export default function ErdBoard() {
     <ReactFlowProvider>
       <ErdBoardInner />
     </ReactFlowProvider>
-  );
+  );
 }
