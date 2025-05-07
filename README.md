@@ -1,13 +1,14 @@
-# DBlitz - Design your database visually with instant SQL export.
+# DBlitz – Design your database visually with instant SQL export.
 
 ## ⚙ Introduction
 
-**DBlitz** is a **Simple and Intuitive ERD (Entity-Relationship Diagram) Maker** built using modern web technologies like Next.js, TypeScript, shadcn/UI, and React-Flow. Whether you're a developer designing database schemas or a student learning relational databases, **DBlitz** helps you create beautiful ER diagrams with ease.
+**DBlitz** is a **Simple and Intuitive ERD (Entity-Relationship Diagram) Maker** built using modern web technologies. It allows developers and students to visually design database schemas and export SQL effortlessly.
 
 ---
 
 <div align="center">
-<img src="public/next-erd.png" alt="NextERD Logo" />
+<img src="public/DBlitz - 1.png" alt="DBlitz Screenshot" />
+<img src="public/DBlitz - 2.png" alt="DBlitz Screenshot" />
 </div>
 
 ---
@@ -25,77 +26,71 @@
 
 ## 🛠️ Tech Stack
 
-NextERD is powered by the following technologies:
+DBlitz is powered by the following technologies:
 
 <div>
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
   <img src="https://img.shields.io/badge/shadcn/UI-000000?style=for-the-badge&logoColor=white">
   <img src="https://img.shields.io/badge/React--Flow-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/pnpm-4B3263?style=for-the-badge&logo=pnpm&logoColor=white">
 </div>
 
 ---
 
 ## 📊 Features
 
-* 🖼️ **Beautiful and Modern UI** – Clean and customizable interface using **shadcn/UI**
-* 🧩 **Interactive ERD Editor** – Drag-and-drop nodes with **React-Flow**
-* ⚡ **Fast and Lightweight** – Built with **Next.js** for performance and SSR
-* 📐 **Entity & Relationship Management** – Define entities and connect them visually
-* 🚀 **Quick Start Interface** – User-friendly with minimal setup required
+* **Visual Database Design**: Create and manage ER diagrams with a user-friendly drag-and-drop interface.
+* **Instant SQL Export**: Export your ER diagram into ready-to-use SQL queries.
+* **Modern UI**: Clean, responsive, and accessible design using shadcn/UI.
+* **Performance Optimized**: Fast rendering and real-time interaction using React Flow.
+* **Open Source**: Fully open-source and customizable for your own needs.
+* **Developer Friendly**: Built with TypeScript and structured for scalability.
 
 ---
 
 ## 🚀 Quick Start
 
-Set up **DBlitz** locally by following these steps:
+Set up DBlitz locally by following these steps:
 
 ### **Prerequisites**
 
-Ensure the following are installed:
+Ensure the following are installed on your system:
 
-* [Node.js](https://nodejs.org/) (v16 or higher)
-* npm or yarn
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/)
+* [pnpm](https://pnpm.io/)
 
 ### **Clone the Repository**
+
+Navigate to your desired directory and run:
 
 ```bash
 git clone https://github.com/vaxad/NextERD.git
 cd NextERD
 ```
 
-### **Install Dependencies**
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### **Run the Development Server**
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open your browser at: `http://localhost:3000`
-
 ---
 
-## 📁 Project Structure
+### **Setup**
 
-```
-NextERD/src
-├── components/         # Reusable UI & ERD components
-├── app/                # Next.js app directory
-├── public/             # Static files (images, icons)
-├── lib/                # Utilities & helpers
-├── lib/types/          # TypeScript interfaces
-├── package.json        # Project config & dependencies
-└── README.md           # Project documentation
-```
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+3. Open your browser and go to:
+
+   ```
+   http://localhost:3000
+   ```
 
 ---
 
@@ -103,13 +98,13 @@ NextERD/src
 
 Contributions are welcome! To contribute:
 
-1. Fork the repo
-2. Create a branch:
+1. Fork the repository.
+2. Create a new branch:
 
    ```bash
    git checkout -b feature/YourFeatureName
    ```
-3. Commit your changes:
+3. Make your changes and commit them:
 
    ```bash
    git commit -m "Add YourFeatureName"
@@ -125,14 +120,12 @@ Contributions are welcome! To contribute:
 
 ## 💬 Support
 
-For questions or feedback, reach out to:
+For support or inquiries, please contact:
 
-* 📧 **Email**: [varadprabhu111@gmail.com](mailto:varadprabhu111@gmail.com)
-* 💻 **GitHub**: [@vaxad](https://github.com/vaxad)
-* 🌐 **Live Demo**: [next-erd.vercel.app](https://next-erd.vercel.app)
+For support or inquiries, please contact:  
+- **GitHub Issues**: [Report an Issue](https://github.com/i-mkarmakar/dblitz/issues)  
+- **LinkedIn**: [Manish Karmakar](https://www.linkedin.com/in/imkarmakar)
 
 ---
 
-## 🪪 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
+Thank you for using **DBlitz**! Design your database visually with instant SQL export.
