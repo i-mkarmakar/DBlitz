@@ -240,7 +240,6 @@ function ErdBoardInner() {
           </div>
         </Panel>
 
-        <Panel position="bottom-center">
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
             <Button
               title={
@@ -282,7 +281,6 @@ function ErdBoardInner() {
               <Ratio size={20} />
             </Button>
           </div>
-        </Panel>
       </ReactFlow>
     </div>
   );
