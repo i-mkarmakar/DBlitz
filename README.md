@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DBlitz – Design your database visually with instant SQL export.
 
-## Getting Started
+## ⚙ Introduction
 
-First, run the development server:
+**DBlitz** is a **Simple and Intuitive ERD (Entity-Relationship Diagram) Maker** built using modern web technologies. It allows developers and students to visually design database schemas and export SQL effortlessly.
+
+---
+
+<div align="center">
+<img src="public/DBlitz - 1.png" alt="DBlitz Screenshot" />
+<img src="public/DBlitz - 2.png" alt="DBlitz Screenshot" />
+</div>
+
+---
+
+## 📋 Table of Contents
+
+1. ⚙ [Introduction](#introduction)
+2. 🛠️ [Tech Stack](#tech-stack)
+3. 📊 [Features](#features)
+4. 🚀 [Quick Start](#quick-start)
+5. 💚 [Contributing](#contributing)
+6. 💬 [Support](#support)
+
+---
+
+## 🛠️ Tech Stack
+
+DBlitz is powered by the following technologies:
+
+<div>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/shadcn/UI-000000?style=for-the-badge&logoColor=white">
+  <img src="https://img.shields.io/badge/React--Flow-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/pnpm-4B3263?style=for-the-badge&logo=pnpm&logoColor=white">
+</div>
+
+---
+
+## 📊 Features
+
+* **Visual Database Design**: Create and manage ER diagrams with a user-friendly drag-and-drop interface.
+* **Instant SQL Export**: Export your ER diagram into ready-to-use SQL queries.
+* **Modern UI**: Clean, responsive, and accessible design using shadcn/UI.
+* **Performance Optimized**: Fast rendering and real-time interaction using React Flow.
+* **Open Source**: Fully open-source and customizable for your own needs.
+* **Developer Friendly**: Built with TypeScript and structured for scalability.
+
+---
+
+## 🚀 Quick Start
+
+Set up DBlitz locally by following these steps:
+
+### **Prerequisites**
+
+Ensure the following are installed on your system:
+
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/)
+* [pnpm](https://pnpm.io/)
+
+### **Clone the Repository**
+
+Navigate to your desired directory and run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/vaxad/NextERD.git
+cd NextERD
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Setup**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install dependencies:
 
-## Learn More
+   ```bash
+   pnpm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   pnpm dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Open your browser and go to:
 
-## Deploy on Vercel
+   ```
+   http://localhost:3000
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💚 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Make your changes and commit them:
+
+   ```bash
+   git commit -m "Add YourFeatureName"
+   ```
+4. Push the branch:
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+5. Open a pull request.
+
+---
+
+## 💬 Support
+
+For support or inquiries, please contact:
+
+For support or inquiries, please contact:  
+- **GitHub Issues**: [Report an Issue](https://github.com/i-mkarmakar/dblitz/issues)  
+- **LinkedIn**: [Manish Karmakar](https://www.linkedin.com/in/imkarmakar)
+
+---
+
+Thank you for using **DBlitz**! Design your database visually with instant SQL export.
