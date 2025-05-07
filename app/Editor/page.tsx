@@ -85,10 +85,7 @@ function ErdBoardInner() {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { zoomIn, zoomOut, fitView } = useReactFlow();
   const store = useStoreApi();
-  const { isInteractive, minZoomReached, maxZoomReached } = useStore(
-    selector,
-    shallow
-  );
+  const { isInteractive, minZoomReached, maxZoomReached } = useStore(selector, shallow);
 
   const createNode = useCallback(() => {
     setNodes((prev) => {
@@ -152,9 +149,9 @@ function ErdBoardInner() {
       width: imageWidth,
       height: imageHeight,
       style: {
-        width: ${imageWidth}px,
-        height: ${imageHeight}px,
-        transform: translate(${viewport.x}px, ${viewport.y}px) scale(${viewport.zoom}),
+        width: `${imageWidth}px`,
+        height: `${imageHeight}px`,
+        transform: `translate(${viewport.x}px, ${viewport.y}px) scale(${viewport.zoom})`,
       },
     }).then(downloadImage);
   };
@@ -167,24 +164,20 @@ function ErdBoardInner() {
   };
 
   const onUseExample = () => {
-    const exampleNodes: Node[] = placeholderData.entities.map(
-      (entity, index) => ({
-        id: n-${index},
-        position: { x: 50 + index * 250, y: 50 + index * 100 },
-        data: { name: entity.name, attributes: entity.attributes, open: true },
-        type: "entity",
-      })
-    );
+    const exampleNodes: Node[] = placeholderData.entities.map((entity, index) => ({
+      id: `n-${index}`,
+      position: { x: 50 + index * 250, y: 50 + index * 100 },
+      data: { name: entity.name, attributes: entity.attributes, open: true },
+      type: "entity",
+    }));
 
     const exampleEdges: Edge[] = placeholderData.relations
       .map((relation, index) => {
-        const from = exampleNodes.find(
-          (node) => node.data.name === relation.from
-        );
+        const from = exampleNodes.find((node) => node.data.name === relation.from);
         const to = exampleNodes.find((node) => node.data.name === relation.to);
         if (!from || !to) return null;
         return {
-          id: e-${index},
+          id: `e-${index}`,
           source: from.id,
           target: to.id,
           type: "relation",
@@ -222,11 +215,7 @@ function ErdBoardInner() {
 
         <Panel position="top-right">
           <div className="absolute right-4 flex flex-row gap-2">
-            <Button
-              variant="ghost"
-              onClick={onUseExample}
-              className="cursor-pointer"
-            >
+            <Button variant="ghost" onClick={onUseExample} className="cursor-pointer">
               Use Example
             </Button>
             <Button
@@ -240,47 +229,45 @@ function ErdBoardInner() {
           </div>
         </Panel>
 
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
-            <Button
-              title={
-                isInteractive ? "Lock Interactions" : "Unlock Interactions"
-              }
-              onClick={onToggleInteractivity}
-              className="cursor-pointer"
-            >
-              {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
-            </Button>
-            <Button
-              title="Zoom In"
-              onClick={onZoomInHandler}
-              disabled={maxZoomReached}
-              className="cursor-pointer"
-            >
-              <ZoomIn size={20} />
-            </Button>
-            <Button
-              title="Add Entity"
-              onClick={createNode}
-              className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer p-4 transform scale-125"
-            >
-              <PlusIcon size={30} />
-            </Button>
-            <Button
-              title="Zoom Out"
-              onClick={onZoomOutHandler}
-              disabled={minZoomReached}
-              className="cursor-pointer"
-            >
-              <ZoomOut size={20} />
-            </Button>
-            <Button
-              title="Fit View"
-              onClick={onFitViewHandler}
-              className="cursor-pointer"
-            >
-              <Ratio size={20} />
-            </Button>
-          </div>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
+          <Button
+            title={isInteractive ? "Lock Interactions" : "Unlock Interactions"}
+            onClick={onToggleInteractivity}
+            className="cursor-pointer"
+          >
+            {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
+          </Button>
+          <Button
+            title="Zoom In"
+            onClick={onZoomInHandler}
+            disabled={maxZoomReached}
+            className="cursor-pointer"
+          >
+            <ZoomIn size={20} />
+          </Button>
+          <Button
+            title="Add Entity"
+            onClick={createNode}
+            className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer p-4 transform scale-125"
+          >
+            <PlusIcon size={30} />
+          </Button>
+          <Button
+            title="Zoom Out"
+            onClick={onZoomOutHandler}
+            disabled={minZoomReached}
+            className="cursor-pointer"
+          >
+            <ZoomOut size={20} />
+          </Button>
+          <Button
+            title="Fit View"
+            onClick={onFitViewHandler}
+            className="cursor-pointer"
+          >
+            <Ratio size={20} />
+          </Button>
+        </div>
       </ReactFlow>
     </div>
   );
@@ -291,5 +278,5 @@ export default function ErdBoard() {
     <ReactFlowProvider>
       <ErdBoardInner />
     </ReactFlowProvider>
-  );
+  );
 }
