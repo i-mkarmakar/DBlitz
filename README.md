@@ -33,7 +33,6 @@ DBlitz is powered by the following technologies:
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
   <img src="https://img.shields.io/badge/shadcn/UI-000000?style=for-the-badge&logoColor=white">
   <img src="https://img.shields.io/badge/React--Flow-61DAFB?style=for-the-badge&logo=react&logoColor=white">
-  <img src="https://img.shields.io/badge/pnpm-4B3263?style=for-the-badge&logo=pnpm&logoColor=white">
 </div>
 
 ---
@@ -121,8 +120,7 @@ Contributions are welcome! To contribute:
 ## 💬 Support
 
 For support or inquiries, please contact:
-
-For support or inquiries, please contact:  
+ 
 - **GitHub Issues**: [Report an Issue](https://github.com/i-mkarmakar/dblitz/issues)  
 - **LinkedIn**: [Manish Karmakar](https://www.linkedin.com/in/imkarmakar)
 
