@@ -9,8 +9,6 @@ import {
   ReactFlowProvider,
   useEdgesState,
   useNodesState,
-  getNodesBounds,
-  getViewportForBounds,
   Panel,
   Connection,
   Edge,
@@ -43,9 +41,6 @@ const selector = (s: ReactFlowState) => ({
   minZoomReached: s.transform[2] <= s.minZoom,
   maxZoomReached: s.transform[2] >= s.maxZoom,
 });
-
-const imageWidth = 1024;
-const imageHeight = 768;
 
 const initialNodes: Node[] = [
   {
@@ -253,7 +248,7 @@ function ErdBoardInner() {
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
 
         <Panel position="top-right">
-          <div className="absolute right-4 flex flex-row gap-2">
+          <div className="flex flex-row gap-2">
             <Button variant="ghost" onClick={onUseExample} className="cursor-pointer">
               Use Example
             </Button>
@@ -267,46 +262,49 @@ function ErdBoardInner() {
             </Button>
           </div>
         </Panel>
-        </ReactFlow>
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex gap-4">
-          <Button
-            title={isInteractive ? "Lock Interactions" : "Unlock Interactions"}
-            onClick={onToggleInteractivity}
-            className="cursor-pointer"
-          >
-            {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
-          </Button>
-          <Button
-            title="Zoom In"
-            onClick={onZoomInHandler}
-            disabled={maxZoomReached}
-            className="cursor-pointer"
-          >
-            <ZoomIn size={20} />
-          </Button>
-          <Button
-            title="Add Entity"
-            onClick={createNode}
-            className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer p-4 transform scale-125"
-          >
-            <PlusIcon size={30} />
-          </Button>
-          <Button
-            title="Zoom Out"
-            onClick={onZoomOutHandler}
-            disabled={minZoomReached}
-            className="cursor-pointer"
-          >
-            <ZoomOut size={20} />
-          </Button>
-          <Button
-            title="Fit View"
-            onClick={onFitViewHandler}
-            className="cursor-pointer"
-          >
-            <Ratio size={20} />
-          </Button>
-        </div>
+
+        <Panel position="bottom-center">
+          <div className="flex gap-4">
+            <Button
+              title={isInteractive ? "Lock Interactions" : "Unlock Interactions"}
+              onClick={onToggleInteractivity}
+              className="cursor-pointer"
+            >
+              {isInteractive ? <Lock size={20} /> : <Unlock size={20} />}
+            </Button>
+            <Button
+              title="Zoom In"
+              onClick={onZoomInHandler}
+              disabled={maxZoomReached}
+              className="cursor-pointer"
+            >
+              <ZoomIn size={20} />
+            </Button>
+            <Button
+              title="Add Entity"
+              onClick={createNode}
+              className="bg-[#ff5941] text-white hover:bg-[#ff5941]/90 cursor-pointer p-4 transform scale-125"
+            >
+              <PlusIcon size={30} />
+            </Button>
+            <Button
+              title="Zoom Out"
+              onClick={onZoomOutHandler}
+              disabled={minZoomReached}
+              className="cursor-pointer"
+            >
+              <ZoomOut size={20} />
+            </Button>
+            <Button
+              title="Fit View"
+              onClick={onFitViewHandler}
+              className="cursor-pointer"
+            >
+              <Ratio size={20} />
+            </Button>
+          </div>
+        </Panel>
+      </ReactFlow>
     </div>
   );
 }
