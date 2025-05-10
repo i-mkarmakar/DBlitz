@@ -131,29 +131,68 @@ function ErdBoardInner() {
   const onZoomOutHandler = () => zoomOut();
   const onFitViewHandler = () => fitView({ padding: 0.1 });
 
-  const onDownloadClick = () => {
-    const bounds = getNodesBounds(nodes);
-    const viewport = getViewportForBounds(
-      bounds,
-      imageWidth,
-      imageHeight,
-      0.5,
-      2,
-      0.1
-    );
-    const flow = document.querySelector(".react-flow__viewport") as HTMLElement;
+  const onDownloadClick = async () => {
+    const flow = document.querySelector(".react-flow") as HTMLElement;
     if (!flow) return;
 
-    toPng(flow, {
-      backgroundColor: "white",
-      width: imageWidth,
-      height: imageHeight,
-      style: {
-        width: `${imageWidth}px`,
-        height: `${imageHeight}px`,
-        transform: `translate(${viewport.x}px, ${viewport.y}px) scale(${viewport.zoom})`,
-      },
-    }).then(downloadImage);
+    const clonedFlow = flow.cloneNode(true) as HTMLElement;
+
+    const edges = clonedFlow.querySelectorAll(".react-flow__edge-path");
+    edges.forEach((edge) => {
+      (edge as SVGPathElement).setAttribute("stroke", "black");
+    });
+
+    const wrapper = document.createElement("div");
+    wrapper.style.position = "fixed";
+    wrapper.style.top = "-9999px";
+    wrapper.style.left = "-9999px";
+    wrapper.style.width = `${flow.offsetWidth}px`;
+    wrapper.style.height = `${flow.offsetHeight}px`;
+
+    wrapper.appendChild(clonedFlow);
+    document.body.appendChild(wrapper);
+
+    try {
+      const dataUrl = await toPng(clonedFlow, {
+        backgroundColor: "white",
+        style: {
+          width: `${flow.offsetWidth}px`,
+          height: `${flow.offsetHeight}px`,
+        },
+      });
+
+      const image = new Image();
+      image.src = dataUrl;
+
+      image.onload = () => {
+        const cropTop = 50;
+        const cropBottom = 50;
+        const cropHeight = image.height - cropTop - cropBottom;
+        const canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = cropHeight;
+
+        const ctx = canvas.getContext("2d");
+        ctx?.drawImage(
+          image,
+          0,
+          0,
+          image.width,
+          cropHeight,
+          0,
+          0,
+          image.width,
+          cropHeight
+        );
+
+        const croppedDataUrl = canvas.toDataURL("image/png");
+        downloadImage(croppedDataUrl);
+      };
+    } catch (err) {
+      console.error("Screenshot error", err);
+    } finally {
+      document.body.removeChild(wrapper);
+    }
   };
 
   const downloadImage = (dataUrl: string) => {
